@@ -9623,7 +9623,7 @@ textarea.form-control {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: #b7472a;
+    background: var(--variable-color-princ);
     margin: 0 auto;
     margin-bottom: 20px; }
     .dbox .icon span {
@@ -9633,7 +9633,7 @@ textarea.form-control {
     width: 100%; }
 
 .contactForm .label {
-  color: #b7472a !important;
+  color: var(--variable-color-princ);
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 600; }

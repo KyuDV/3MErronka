@@ -75,7 +75,7 @@
                         <ul>
                             <li><span class="icon fa fa-map marker"></span><span class="text">Violvägen 2, Billingsfors,
                                     Sweden</span></li>
-                            <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+46 0531-4202166
+                            <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+46 0531-420166
                                         210</span></a></li>
                             <li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span
                                         class="text">support@3m.com</span></a></li>
