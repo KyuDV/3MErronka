@@ -76,14 +76,14 @@
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Products</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="product.html">Products</a>
-                            <a class="dropdown-item" href="product-single.html">Single Product</a>
-                            <a class="dropdown-item" href="cart.html">Cart</a>
-                            <a class="dropdown-item" href="checkout.html">Checkout</a>
+                            <a class="dropdown-item" href="product.php">Products</a>
+                            <a class="dropdown-item" href="product-single.php">Single Product</a>
+                            <a class="dropdown-item" href="cart.php">Cart</a>
+                            <a class="dropdown-item" href="checkout.php">Checkout</a>
                         </div>
                     </li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                 </ul>
             </div>
         </div>
