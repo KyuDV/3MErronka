@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php require_once('header.php')?>
 
 <body>
@@ -29,7 +27,7 @@
                 <div class="col-md-6 wrap-about pl-md-5 ftco-animate py-5">
                     <div class="heading-section">
                         <span class="subheading">Since 1975</span>
-                        <h2 class="mb-4">The life whit confortable tracsuits</h2>
+                        <h2 class="mb-4">THE LIFE WITH NEW CLOTHES </h2>
 
                         <p>Welcome to our clothing store, where we blend fashion with comfort and quality with style.
                             Our curated collection caters to diverse tastes, offering everything from timeless classics
@@ -203,30 +201,3 @@
     </section>
 
     <?php  require_once('footer.php') ?>
-    <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-                stroke="#F96D00" />
-        </svg></div>
-
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/scrollax.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false">
-    </script>
-    <script src="js/google-map.js"></script>
-    <script src="js/main.js"></script>
-
-</body>
-
-</html>

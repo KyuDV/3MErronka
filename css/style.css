@@ -8893,7 +8893,7 @@ h1, h2, h3, h4, h5,
   -moz-box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
   box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29); }
   .table thead.thead-primary {
-    background: #b7472a;
+    background: var(--variable-color-princ);
     border-radius: 4px; }
   .table thead th {
     border: none;
