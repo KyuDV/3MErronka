@@ -40,7 +40,7 @@
                         </p>
                     </div>
                     <div class="reg">
-                        <p class="mb-0"><a href="#" class="mr-2">Sign Up</a> <a href="#">Log In</a></p>
+                        <p class="mb-0"><a href="configuration.php" class="mr-2">Configuration</a></p>
                     </div>
                 </div>
             </div>
