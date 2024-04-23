@@ -12,6 +12,7 @@
 </script>
 <script src="js/google-map.js"></script>
 <script src="js/main.js"></script>
+<script src="js/cesta.js"></script>
 <footer class="ftco-footer">
     <div class="container">
         <div class="row mb-5">

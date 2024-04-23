@@ -8641,7 +8641,7 @@ h1, h2, h3, h4, h5,
       font-weight: 300; }
     .product .text .category {
       font-style: italic;
-      color: #b7472a; }
+      color: var(--variable-color-princ); }
     .product .text .price {
       font-style: italic;
       color: #000000; }

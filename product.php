@@ -43,24 +43,23 @@ $result = $conn->query($sql);
           // Iterar sobre los resultados de la consulta y generar HTML para cada producto
           if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-              echo '<div class="col-md-4 col-xs-12 d-flex">';
-              echo '<div class="product ftco-animate">';
-              echo '<div class="img d-flex align-items-center justify-content-center" style="background-image: url(' . $row["Irudia"] . ');">';
-              echo '<div class="desc">';
-              echo '<p class="meta-prod d-flex">';
-              echo '<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>';
-              echo '<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>';
-              echo '<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>';
-              echo '</p>';
-              echo '</div>';
-              echo '</div>';
-              echo '<div class="text text-center">';
-              echo '<span class="category">' . $row["izena"] . '</span>';
-              echo '<h2>' . $row["modeloa"] . '</h2>';
-              echo '<span class="price">' . $row["prezioaS"] . '</span>';
-              echo '</div>';
-              echo '</div>';
-              echo '</div>';
+                echo '<div class="col-md-4 col-xs-12 d-flex">';
+                echo '<div class="product ftco-animate">';
+                echo '<div class="img d-flex align-items-center justify-content-center" style="background-image: url(' . $row["Irudia"] . ');">';
+                echo '<div class="desc">';
+                echo '<p class="meta-prod d-flex">';
+                echo '<a href="#" class="d-flex align-items-center justify-content-center comprar" data-nombre="' . $row["izena"] . '" data-precio="' . $row["prezioaS"] . '"><span class="flaticon-shopping-bag"></span></a>';
+                echo '<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>';
+                echo '</p>';
+                echo '</div>';
+                echo '</div>';
+                echo '<div class="text text-center">';
+                echo '<span class="category">' . $row["izena"] . '</span>';
+                echo '<h2>' . $row["modeloa"] . '</h2>';
+                echo '<span class="price">' . $row["prezioaS"] . '</span>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
             }
           } else {
             echo "0 resultados";
