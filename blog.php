@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php require_once('header.php') ?>
-
+ 
 <section class="hero-wrap hero-wrap-2" style="background-image: url('images/blog.jpg');"
     data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
@@ -16,7 +16,7 @@
         </div>
     </div>
 </section>
-
+ 
 <section class="ftco-section">
     <div class="container">
         <?php
@@ -25,19 +25,19 @@ $servername = "localhost:3306";
 $username = "root";
 $password = "1WMG2023";
 $dbname = "refresh";
-
+ 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
-
+ 
 // Verificar la conexión
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
+ 
 // Consulta SQL para recuperar las noticias
 $sql = "SELECT * FROM berriak";
 $result = $conn->query($sql);
-
+ 
 // Verificar si hay resultados de la consulta
 if ($result->num_rows > 0) {
     // Iterar sobre los resultados y generar el HTML para cada noticia
@@ -63,5 +63,5 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 </section>
-
+ 
 <?php require_once('footer.php') ?>
