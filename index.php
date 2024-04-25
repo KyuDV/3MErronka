@@ -8,7 +8,7 @@
             <div class="col-md-8 ftco-animate d-flex align-items-end">
                 <div class="text w-100 text-center">
                     <h1 class="mb-4">3M <span>Brand</span>.</h1>
-                    <p><a href="#" class="btn btn-primary py-2 px-4">Shop Now</a> <a href="#"
+                    <p><a href="product.php" class="btn btn-primary py-2 px-4">Shop Now</a> <a href="about.php"
                             class="btn btn-white btn-outline-white py-2 px-4">Read more</a></p>
                 </div>
             </div>

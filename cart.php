@@ -1,4 +1,4 @@
-<?php require_once('header.php');?>
+<?php require_once('header.php'); ?>
 <section class="hero-wrap hero-wrap-2" style="background-image: url('images/cart.jpg');"
     data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
@@ -26,11 +26,16 @@
                             <th>Product</th>
                             <th>Price</th>
                             <th>Quantity</th>
-                            <th>total</th>
+                            <th>Total</th>
                             <th>&nbsp;</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <?php
+                        // Verificar si hay productos en la sesión
+                        if (isset($_SESSION['productos']) && !empty($_SESSION['productos'])) {
+                            foreach ($_SESSION['productos'] as $producto) {
+                                ?>
                         <tr class="alert" role="alert">
                             <td>
                                 <label class="checkbox-wrap checkbox-primary">
@@ -39,183 +44,116 @@
                                 </label>
                             </td>
                             <td>
+                                <!-- Aquí puedes colocar la imagen del producto -->
                                 <div class="img" style="background-image: url(images/prod-1.jpg);"></div>
                             </td>
                             <td>
                                 <div class="email">
-                                    <span>Jim Beam Kentucky Straight</span>
-                                    <span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
+                                    <span><?php echo $producto['nombre']; ?></span>
+                                    <!-- Puedes mostrar más detalles del producto si lo deseas -->
                                 </div>
                             </td>
-                            <td>$44.99</td>
-                            <td class="quantity">
-                                <div class="input-group">
-                                    <input type="text" name="quantity" class="quantity form-control input-number"
-                                        value="2" min="1" max="100">
-                                </div>
-                            </td>
-                            <td>$89.98</td>
-                            <td>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                                </button>
-                            </td>
-                        </tr>
-
-                        <tr class="alert" role="alert">
-                            <td>
-                                <label class="checkbox-wrap checkbox-primary">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </td>
-                            <td>
-                                <div class="img" style="background-image: url(images/prod-2.jpg);"></div>
-                            </td>
-                            <td>
-                                <div class="email">
-                                    <span>Jim Beam Kentucky Straight</span>
-                                    <span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
-                                </div>
-                            </td>
-                            <td>$30.99</td>
+                            <td><?php echo $producto['precio']; ?></td>
                             <td class="quantity">
                                 <div class="input-group">
                                     <input type="text" name="quantity" class="quantity form-control input-number"
                                         value="1" min="1" max="100">
                                 </div>
                             </td>
-                            <td>$30.99</td>
+                            <!-- Aquí puedes calcular el total (precio * cantidad) -->
+                            <td><?php echo $producto['precio']; ?></td>
                             <td>
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="fa fa-close"></i></span>
+                                    <span aria-hidden="true"><i href="eliminar_producto.php?eliminar=0"
+                                            class="fa fa-close"></i></span>
                                 </button>
                             </td>
                         </tr>
-
-                        <tr class="alert" role="alert">
-                            <td>
-                                <label class="checkbox-wrap checkbox-primary">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </td>
-                            <td>
-                                <div class="img" style="background-image: url(images/prod-3.jpg);"></div>
-                            </td>
-                            <td>
-                                <div class="email">
-                                    <span>Jim Beam Kentucky Straight</span>
-                                    <span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
-                                </div>
-                            </td>
-                            <td>$35.50</td>
-                            <td class="quantity">
-                                <div class="input-group">
-                                    <input type="text" name="quantity" class="quantity form-control input-number"
-                                        value="1" min="1" max="100">
-                                </div>
-                            </td>
-                            <td>$35.50</td>
-                            <td>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                                </button>
-                            </td>
-                        </tr>
-
-                        <tr class="alert" role="alert">
-                            <td>
-                                <label class="checkbox-wrap checkbox-primary">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </td>
-                            <td>
-                                <div class="img" style="background-image: url(images/prod-4.jpg);"></div>
-                            </td>
-                            <td>
-                                <div class="email">
-                                    <span>Jim Beam Kentucky Straight</span>
-                                    <span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
-                                </div>
-                            </td>
-                            <td>$76.99</td>
-                            <td class="quantity">
-                                <div class="input-group">
-                                    <input type="text" name="quantity" class="quantity form-control input-number"
-                                        value="1" min="1" max="100">
-                                </div>
-                            </td>
-                            <td>$76.99</td>
-                            <td>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                                </button>
-                            </td>
-                        </tr>
-
-                        <tr class="alert" role="alert">
-                            <td class="border-bottom-0">
-                                <label class="checkbox-wrap checkbox-primary">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </td>
-                            <td class="border-bottom-0">
-                                <div class="img" style="background-image: url(images/prod-5.jpg);"></div>
-                            </td>
-                            <td class="border-bottom-0">
-                                <div class="email">
-                                    <span>Jim Beam Kentucky Straight</span>
-                                    <span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
-                                </div>
-                            </td>
-                            <td class="border-bottom-0">$40.00</td>
-                            <td class="quantity border-bottom-0">
-                                <div class="input-group">
-                                    <input type="text" name="quantity" class="quantity form-control input-number"
-                                        value="1" min="1" max="100">
-                                </div>
-                            </td>
-                            <td class="border-bottom-0">$40.00</td>
-                            <td class="border-bottom-0">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                                </button>
-                            </td>
-                        </tr>
+                        <?php
+                            }
+                        } else {
+                            // Si no hay productos en la sesión, mostrar un mensaje
+                            echo "<tr><td colspan='7'>No hay productos en el carrito.</td></tr>";
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
         </div>
         <div class="row justify-content-end">
             <div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">
+                <!-- Aquí puedes mostrar el total del carrito -->
                 <div class="cart-total mb-3">
                     <h3>Cart Totals</h3>
-                    <p class="d-flex">
-                        <span>Subtotal</span>
-                        <span>$20.60</span>
-                    </p>
-                    <p class="d-flex">
-                        <span>Delivery</span>
-                        <span>$0.00</span>
-                    </p>
-                    <p class="d-flex">
-                        <span>Discount</span>
-                        <span>$3.00</span>
-                    </p>
-                    <hr>
-                    <p class="d-flex total-price">
-                        <span>Total</span>
-                        <span>$17.60</span>
-                    </p>
+                    <?php
+// Calculamos el subtotal sumando los precios de todos los productos en la sesión
+$subTotal = 0;
+if(isset($_SESSION['productos']) && !empty($_SESSION['productos'])) {
+    foreach ($_SESSION['productos'] as $producto) {
+        $subTotal += $producto['precio'];
+    }
+}
+
+// Calcular el total (sumando el subtotal y la entrega y luego restando el descuento si es aplicable)
+$total = $subTotal;
+
+// Mostrar los valores
+echo "Total: $" . number_format($total, 2);
+?>
+
+                    <?php
+// Iniciar la sesión si no está iniciada
+
+// Función para eliminar un producto del carrito por su índice
+function eliminarProductoCarrito($indice) {
+    // Verificar si el índice existe en la sesión
+    if (isset($_SESSION['productos'][$indice])) {
+        // Eliminar el producto del carrito utilizando el índice
+        unset($_SESSION['productos'][$indice]);
+        return true; // Indicar que el producto fue eliminado correctamente
+    } else {
+        return false; // Indicar que el índice no existe en el carrito
+    }
+}
+
+// Llamar a la función si se recibió un índice de producto para eliminar
+if (isset($_GET['eliminar']) && $_GET['eliminar'] !== '') {
+    $indice = $_GET['eliminar'];
+    $eliminado = eliminarProductoCarrito($indice);
+    if ($eliminado) {
+        echo "El producto fue eliminado del carrito.";
+    } else {
+        echo "El producto no pudo ser encontrado en el carrito.";
+    }
+}
+?>
+
                 </div>
-                <p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Proceed to
+                <div> <a href="checkout.php" class="btn btn-primary py-3 px-4" id="proceedToCheckoutBtn">Proceed to
                         Checkout</a>
+                </div>
                 </p>
             </div>
         </div>
     </div>
 </section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#proceedToCheckoutBtn').click(function(e) {
+
+        // Realizar una solicitud AJAX al servidor
+        $.ajax({
+            type: 'POST', // Método HTTP
+            url: 'insertar_pedido.php', // Ruta del script PHP que maneja la inserción del pedido
+            data: {}, // Puedes enviar datos adicionales aquí si es necesario
+            success: function(response) {
+                window.location.href = "checkout.php";
+                // Aquí puedes agregar cualquier lógica adicional después de recibir la respuesta del servidor
+            }
+        });
+    });
+});
+</script>
+
 <?php require_once('footer.php'); ?>

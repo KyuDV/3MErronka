@@ -1,7 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <configuracion>
-    <colores>
-        <colorprincipal>#FFFFFF</colorprincipal>
-        <colorbotones>#000000</colorbotones>
-    </colores>
-    <idioma>ES</idioma>
+  <primaryColor>#ff0000</primaryColor>
+  <secondaryColor>#44ff00</secondaryColor>
 </configuracion>

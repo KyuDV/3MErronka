@@ -261,8 +261,6 @@ summary {
   display: list-item;
   cursor: pointer; }
 
-template {
-  display: none; }
 
 [hidden] {
   display: none !important; }
@@ -447,7 +445,7 @@ pre {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -15px;
+  margin-right: 0px;
   margin-left: -15px; }
 
 .no-gutters {

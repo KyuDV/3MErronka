@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start(); // Inicia la sesión si no está iniciada
+
+?>
 
 <head>
     <title>3M Brand | Sport Street Wear</title>
@@ -49,19 +53,14 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">3M <span>Brand</span></a>
+            <a class="navbar-brand" href="index.php">3M <span>Brand</span></a>
             <div class="order-lg-last btn-group">
-                <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
+                <a href="cart.php" class="btn-cart dropdown-toggle dropdown-toggle-split">
                     <span class="flaticon-shopping-bag"></span>
-                    <div class="d-flex justify-content-center align-items-center"><small id="cantidad-carrito">0</small>
+                    <div class="d-flex justify-content-center align-items-center"><small
+                            id="cantidadtotal"><?php echo isset($_SESSION['contador_cesta']) ? $_SESSION['contador_cesta'] : '0'; ?></small>
                     </div>
                 </a>
-
-                <div class="dropdown-menu dropdown-menu-right">
-
-                </div>
-
             </div>
 
 
@@ -74,16 +73,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Products</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="product.php">Products</a>
-                            <a class="dropdown-item" href="product-single.php">Single Product</a>
-                            <a class="dropdown-item" href="cart.php">Cart</a>
-                            <a class="dropdown-item" href="checkout.php">Checkout</a>
-                        </div>
-                    </li>
+                    <li class="nav-item"><a href="product.php" class="nav-link">Products</a></li>
                     <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
                     <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                 </ul>

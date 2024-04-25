@@ -256,8 +256,6 @@ summary {
   display: list-item;
   cursor: pointer; }
 
-template {
-  display: none; }
 
 [hidden] {
   display: none !important; }

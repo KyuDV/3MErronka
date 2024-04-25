@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php require_once('header.php') ?>
 
 <section class="hero-wrap hero-wrap-2" style="background-image: url('images/blog.jpg');"
@@ -24,7 +22,7 @@
 $servername = "localhost:3306";
 $username = "root";
 $password = "1WMG2023";
-$dbname = "refresh";
+$dbname = "3m";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -35,7 +33,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta SQL para recuperar las noticias
-$sql = "SELECT * FROM berriak";
+$sql = "SELECT * FROM notiziak";
 $result = $conn->query($sql);
 
 // Verificar si hay resultados de la consulta
@@ -44,14 +42,12 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo '<div class="col-lg-6 d-flex align-items-stretch ftco-animate">';
         echo '<div class="blog-entry d-md-flex">';
-        echo 'Ruta de la imagen: ' . $row["Argazkiak"] . '<br>';
-        echo '<img src="images/' . $row["Argazkiak"] . '">';
         echo '<div class="text p-4 bg-light">';
         echo '<div class="meta">';
-        echo '<p><span class="fa fa-calendar"></span>' . $row["ArgitaratzeData"] . '</p>';
+        echo '<p><span class="fa fa-calendar"></span>' . $row["argitaratzeData"] . '</p>';
         echo '</div>';
-        echo '<h3 class="heading mb-3"><a href="#">' . $row["Izenburua"] . '</a></h3>';
-        echo '<p>' . $row["Notizia"] . '</p>';
+        echo '<h3 class="heading mb-3"><a href="single_news.php?id=' . $row["id"] . '">' . $row["izenburua_en"] . '</a></h3>';
+        echo '<p>' . $row["notizia_en"] . '</p>';
         echo '<a href="#" class="btn-custom">Continue <span class="fa fa-long-arrow-right"></span></a>';
         echo '</div>';
         echo '</div>';
