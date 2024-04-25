@@ -13,7 +13,7 @@
         </div>
     </div>
 </section>
-
+ 
 <section class="ftco-section">
     <div class="container">
         <div class="row justify-content-center">
@@ -110,6 +110,7 @@ if(isset($_SESSION['productos']) && !empty($_SESSION['productos'])) {
         $subTotal += $producto['precio'];
     }
 }
+<<<<<<< HEAD
 
 // Calcular el total (sumando el subtotal y la entrega y luego restando el descuento si es aplicable)
 $total = $subTotal;
@@ -121,6 +122,19 @@ echo "Total: $" . number_format($total, 2);
                                 <?php
 // Iniciar la sesión si no está iniciada
 
+=======
+ 
+// Calcular el total (sumando el subtotal y la entrega y luego restando el descuento si es aplicable)
+$total = $subTotal;
+ 
+// Mostrar los valores
+echo "Total: $" . number_format($total, 2);
+?>
+ 
+                                <?php
+// Iniciar la sesión si no está iniciada
+ 
+>>>>>>> ed4f31fdbea0c959202447635e78c284c5419a09
 // Función para eliminar un producto del carrito por su índice
 function eliminarProductoCarrito($indice) {
     // Verificar si el índice existe en la sesión
@@ -132,7 +146,11 @@ function eliminarProductoCarrito($indice) {
         return false; // Indicar que el índice no existe en el carrito
     }
 }
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> ed4f31fdbea0c959202447635e78c284c5419a09
 // Llamar a la función si se recibió un índice de producto para eliminar
 if (isset($_GET['eliminar']) && $_GET['eliminar'] !== '') {
     $indice = $_GET['eliminar'];
@@ -144,7 +162,11 @@ if (isset($_GET['eliminar']) && $_GET['eliminar'] !== '') {
     }
 }
 ?>
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> ed4f31fdbea0c959202447635e78c284c5419a09
                             </div>
                             </p>
                         </div>
@@ -186,8 +208,13 @@ if (isset($_GET['eliminar']) && $_GET['eliminar'] !== '') {
 <script>
 $(document).ready(function() {
     $('#placeOrderBtn').click(function(e) {
+<<<<<<< HEAD
 
 
+=======
+ 
+ 
+>>>>>>> ed4f31fdbea0c959202447635e78c284c5419a09
         // Realizar una solicitud AJAX al servidor
         $.ajax({
             type: 'POST', // Método HTTP
@@ -200,4 +227,8 @@ $(document).ready(function() {
         });
     });
 });
+<<<<<<< HEAD
 </script>
+=======
+</script>
+>>>>>>> ed4f31fdbea0c959202447635e78c284c5419a09
