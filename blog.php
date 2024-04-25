@@ -1,67 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<?php require_once('header.php') ?>
+<?php
+// Incluir el archivo que contiene la configuración de la base de datos
+require_once('header.php');
  
-<section class="hero-wrap hero-wrap-2" style="background-image: url('images/blog.jpg');"
-    data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row no-gutters slider-text align-items-end justify-content-center">
-            <div class="col-md-9 ftco-animate mb-5 text-center">
-                <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i
-                                class="fa fa-chevron-right"></i></a></span> <span>Blog <i
-                            class="fa fa-chevron-right"></i></span></p>
-                <h2 class="mb-0 bread">Blog</h2>
-            </div>
-        </div>
-    </div>
-</section>
+// Configuración de la conexión a la base de datos
+$servername = "localhost"; // Nombre del servidor de la base de datos
+$username = "root"; // Nombre de usuario de la base de datos
+$password = "1WMG2023"; // Contraseña de la base de datos
+$dbname = "3m"; // Nombre de la base de datos
  
-<section class="ftco-section">
-    <div class="container">
-        <?php
-// Conexión a la base de datos (suponiendo que estás utilizando MySQL)
-$servername = "localhost:3306";
-$username = "root";
-$password = "1WMG2023";
-$dbname = "refresh";
- 
-// Crear conexión
+// Crear la conexión utilizando MySQLi
 $conn = new mysqli($servername, $username, $password, $dbname);
  
-// Verificar la conexión
+// Verificar si hay errores en la conexión
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Error en la conexión: " . $conn->connect_error);
 }
  
-// Consulta SQL para recuperar las noticias
-$sql = "SELECT * FROM berriak";
+// Obtener el ID de la noticia de la URL
+$news_id = $_GET['id'];
+ 
+// Realizar la consulta SQL para recuperar los detalles de la noticia con ese ID
+$sql = "SELECT * FROM notiziak WHERE id = $news_id";
 $result = $conn->query($sql);
  
 // Verificar si hay resultados de la consulta
 if ($result->num_rows > 0) {
-    // Iterar sobre los resultados y generar el HTML para cada noticia
-    while($row = $result->fetch_assoc()) {
-        echo '<div class="col-lg-6 d-flex align-items-stretch ftco-animate">';
-        echo '<div class="blog-entry d-md-flex">';
-        echo 'Ruta de la imagen: ' . $row["Argazkiak"] . '<br>';
-        echo '<img src="images/' . $row["Argazkiak"] . '">';
-        echo '<div class="text p-4 bg-light">';
-        echo '<div class="meta">';
-        echo '<p><span class="fa fa-calendar"></span>' . $row["ArgitaratzeData"] . '</p>';
-        echo '</div>';
-        echo '<h3 class="heading mb-3"><a href="#">' . $row["Izenburua"] . '</a></h3>';
-        echo '<p>' . $row["Notizia"] . '</p>';
-        echo '<a href="#" class="btn-custom">Continue <span class="fa fa-long-arrow-right"></span></a>';
-        echo '</div>';
-        echo '</div>';
-        echo '</div>';
-    }
-} else {
-    echo "0 results";
-}
-$conn->close();
-?>
-</section>
+    // Mostrar los detalles de la noticia
+    $row = $result->fetch_assoc();
+    ?>
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 ftco-animate">
+                <p>
+                    <img src="images/<?php echo $row['argazkiak']; ?>" alt="Image" class="img-fluid">
+                </p>
+                <h2 class="mb-3"><?php echo $row['izenburua_en']; ?></h2>
+                <p><?php echo $row['notizia_en']; ?></p>
+                <button onclick="goBack()" class="btn btn-primary py-2 px-4">Volver</button>
  
-<?php require_once('footer.php') ?>
+                <script>
+                function goBack() {
+                    window.history.back();
+                }
+                </script>
+            </div>
+        </div>
+    </div>
+</section>
+<?php
+} else {
+echo "No se encontró la noticia.";
+}
+ 
+// Incluir el archivo de pie de página
+require_once('footer.php');
+?>
